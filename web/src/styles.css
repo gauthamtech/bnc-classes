@@ -748,3 +748,21 @@ button { font: inherit; color: inherit; }
 }
 .lrow[data-ready="false"] .lrow__t { color: var(--text-3); }
 .lrow__acts { display: flex; align-items: center; gap: 8px; }
+
+/* ---------------------------------------------------------
+   OFFLINE
+   Its own state, not an error — see DESIGN.md. Amber, because
+   nothing is broken and nobody has done anything wrong.
+   --------------------------------------------------------- */
+.offline {
+  display: flex; align-items: center; gap: 10px;
+  padding: 10px 20px;
+  background: rgba(255,196,138,.10);
+  border-bottom: 1px solid rgba(255,196,138,.30);
+  color: var(--warn);
+  font-size: .84rem;
+}
+.offline__dot {
+  flex: none; width: 7px; height: 7px; border-radius: 999px;
+  background: var(--warn);
+}

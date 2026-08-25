@@ -3,6 +3,7 @@ import { HashRouter, Routes, Route, Link, Navigate } from 'react-router-dom';
 import { AuthProvider, useAuth } from './lib/useAuth';
 import { Splash } from './components/Splash';
 import { BottomNav } from './components/BottomNav';
+import { OfflineBanner } from './components/OfflineBanner';
 import { SignIn } from './routes/SignIn';
 import { Home } from './routes/Home';
 import { Profile } from './routes/Profile';
@@ -67,6 +68,7 @@ function Shell() {
       {ready && configured && session && !recovery && device !== 'blocked' && (
         <>
           <TopBar />
+          <OfflineBanner />
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/account" element={<Profile />} />

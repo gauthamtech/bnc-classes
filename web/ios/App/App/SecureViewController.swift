@@ -43,6 +43,28 @@ class SecureViewController: CAPBridgeViewController {
         // A recording already running when the app opens must be caught too —
         // otherwise starting the recorder first defeats the whole thing.
         applyCaptureState()
+
+        warnIfJailbroken()
+    }
+
+    /// Mirrors RootCheck on Android: a warning, never a lock. See JailbreakCheck
+    /// for why blocking outright is the wrong trade.
+    private func warnIfJailbroken() {
+        guard JailbreakCheck.looksJailbroken() else { return }
+
+        let alert = UIAlertController(
+            title: "Modified device",
+            message: "This iPhone appears to be jailbroken. Lessons will still play, "
+                   + "but BNC cannot guarantee that video protection works correctly "
+                   + "on a modified device.",
+            preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Continue", style: .default))
+
+        // Deferred: presenting from viewDidLoad happens before the view is in a
+        // window, and the alert would silently never appear.
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.6) { [weak self] in
+            self?.present(alert, animated: true)
+        }
     }
 
     deinit {
