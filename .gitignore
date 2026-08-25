@@ -1,0 +1,59 @@
+# ---------------------------------------------------------------
+# Secrets — never commit these.
+# ---------------------------------------------------------------
+# Supabase URL + anon key. The anon key is safe by design, but the file is
+# per-machine and belongs in .env.example instead.
+web/.env.local
+*.env.local
+
+# Android release signing. Losing the keystore means never being able to update
+# the app on Play again; COMMITTING it means anyone who clones can publish as
+# you. Back it up somewhere private, not here.
+*.jks
+*.keystore
+android/keystore.properties
+
+# Apple signing. Codemagic fetches these itself from App Store Connect.
+*.p12
+*.mobileprovision
+*.cer
+AuthKey_*.p8
+
+# ---------------------------------------------------------------
+# Machine-specific
+# ---------------------------------------------------------------
+android/local.properties
+.idea/
+.vscode/*
+!.vscode/extensions.json
+.DS_Store
+Thumbs.db
+
+# ---------------------------------------------------------------
+# Build output — all of it is regenerated, and Codemagic rebuilds from source.
+# ---------------------------------------------------------------
+node_modules/
+web/dist/
+web/dist-ssr/
+android/.gradle/
+android/build/
+android/app/build/
+# Mirrored into the APK by the syncWebBuild Gradle task on every build.
+android/app/src/main/assets/app/
+web/ios/App/build/
+web/ios/App/App/public/
+web/ios/DerivedData/
+**/xcuserdata/
+build/
+
+# Shipped artefacts. Rebuild rather than version them.
+*.apk
+*.aab
+*.ipa
+
+# ---------------------------------------------------------------
+# Logs and scratch
+# ---------------------------------------------------------------
+*.log
+npm-debug.log*
+.firebase/

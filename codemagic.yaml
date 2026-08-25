@@ -1,0 +1,65 @@
+# Cloud iOS builds — no Mac required.
+#
+# Codemagic runs this on a hosted Mac, so the whole loop is: push to git,
+# Codemagic builds and signs, TestFlight puts it on the iPhone. Nothing here
+# needs Xcode locally, which is the entire point.
+#
+# Capacitor 8 uses Swift Package Manager, not CocoaPods, so there is no
+# .xcworkspace and no `pod install` step — build the .xcodeproj directly.
+
+workflows:
+  ios-testflight:
+    name: BNC Classes — iOS
+    instance_type: mac_mini_m2
+    max_build_duration: 60
+
+    environment:
+      node: 22
+      xcode: latest
+      vars:
+        XCODE_PROJECT: "web/ios/App/App.xcodeproj"
+        XCODE_SCHEME: "App"
+        BUNDLE_ID: "com.bncphysics.classes"
+      # Created in Codemagic → Teams → Integrations → App Store Connect.
+      # Needs an App Store Connect API key from Bineesh sir's Apple account.
+      integrations:
+        app_store_connect: BNC App Store Connect
+
+    scripts:
+      - name: Install web dependencies
+        script: cd web && npm ci
+
+      - name: Build the web app
+        # The iOS app bundles this output, exactly as the APK does. Skipping it
+        # would ship whatever dist happened to be committed.
+        script: cd web && npm run build
+
+      - name: Sync into the iOS project
+        script: cd web && npx cap sync ios
+
+      - name: Fetch signing certificates and profiles
+        script: |
+          app-store-connect fetch-signing-files "$BUNDLE_ID" \
+            --type IOS_APP_STORE --create
+          keychain initialize
+          keychain add-certificates
+          xcode-project use-profiles
+
+      - name: Build the ipa
+        script: |
+          xcode-project build-ipa \
+            --project "$XCODE_PROJECT" \
+            --scheme "$XCODE_SCHEME"
+
+    artifacts:
+      - build/ios/ipa/*.ipa
+      - /tmp/xcodebuild_logs/*.log
+
+    publishing:
+      app_store_connect:
+        auth: integration
+        # Goes to TestFlight only. App Store submission stays a manual decision
+        # in App Store Connect — an automatic release is not something to
+        # trigger from a git push.
+        submit_to_testflight: true
+        submit_to_app_store: false

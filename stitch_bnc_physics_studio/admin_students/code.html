@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>BNC Physics - Students</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700&amp;family=Schibsted+Grotesk:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-primary": "#00344b",
+                        "surface-bright": "#343a3e",
+                        "on-tertiary-container": "#553000",
+                        "on-primary-container": "#003d57",
+                        "on-surface": "#dee3e9",
+                        "secondary-fixed-dim": "#77d1ff",
+                        "on-primary-fixed": "#001e2e",
+                        "outline-variant": "#3e4850",
+                        "primary-container": "#00adef",
+                        "on-tertiary-fixed": "#2c1600",
+                        "on-surface-variant": "#bdc8d1",
+                        "secondary": "#77d1ff",
+                        "outline": "#87929b",
+                        "on-primary-fixed-variant": "#004c6c",
+                        "surface-container-lowest": "#090f13",
+                        "tertiary": "#ffb86f",
+                        "inverse-on-surface": "#2c3135",
+                        "surface-container-low": "#171c20",
+                        "on-secondary-fixed": "#001e2c",
+                        "secondary-container": "#00a1d6",
+                        "inverse-surface": "#dee3e9",
+                        "tertiary-fixed-dim": "#ffb86f",
+                        "background": "#0f1418",
+                        "surface-variant": "#30353a",
+                        "on-tertiary-fixed-variant": "#693c00",
+                        "tertiary-container": "#e78d18",
+                        "on-error": "#690005",
+                        "surface-container": "#1b2024",
+                        "on-tertiary": "#4a2800",
+                        "surface-tint": "#83cfff",
+                        "primary-fixed": "#c6e7ff",
+                        "primary": "#83cfff",
+                        "surface-container-high": "#252b2f",
+                        "on-secondary": "#003549",
+                        "surface-dim": "#0f1418",
+                        "on-background": "#dee3e9",
+                        "surface-container-highest": "#30353a",
+                        "primary-fixed-dim": "#83cfff",
+                        "tertiary-fixed": "#ffdcbe",
+                        "on-secondary-fixed-variant": "#004d68",
+                        "inverse-primary": "#00658d",
+                        "error-container": "#93000a",
+                        "surface": "#0f1418",
+                        "secondary-fixed": "#c2e8ff",
+                        "on-error-container": "#ffdad6",
+                        "on-secondary-container": "#003346",
+                        "error": "#ffb4ab"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "unit-xl": "32px",
+                        "unit-xs": "4px",
+                        "gutter": "16px",
+                        "margin-mobile": "16px",
+                        "touch-target": "48px",
+                        "unit-sm": "8px",
+                        "unit-md": "16px",
+                        "margin-desktop": "32px",
+                        "unit-lg": "24px"
+                    },
+                    "fontFamily": {
+                        "body-md": ["Schibsted Grotesk"],
+                        "headline-lg": ["Outfit"],
+                        "display-lg": ["Outfit"],
+                        "body-lg": ["Schibsted Grotesk"],
+                        "metadata-sm": ["Schibsted Grotesk"],
+                        "headline-md": ["Outfit"],
+                        "label-md": ["Outfit"]
+                    },
+                    "fontSize": {
+                        "body-md": ["16px", { "lineHeight": "24px", "letterSpacing": "0", "fontWeight": "400" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "display-lg": ["40px", { "lineHeight": "48px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "letterSpacing": "0", "fontWeight": "400" }],
+                        "metadata-sm": ["12px", { "lineHeight": "16px", "letterSpacing": "0", "fontWeight": "400" }],
+                        "headline-md": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "label-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0.02em", "fontWeight": "600" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body { background-color: #060814; color: #dee3e9; }
+        .bg-level-1 { background-color: #090C1D; }
+        .bg-level-2 { background-color: #0D1128; }
+        .bg-level-3 { background-color: #131836; }
+        .edge-border { border: 1px solid rgba(255,255,255,0.14); }
+        .hairline-border { border: 1px solid rgba(255,255,255,0.075); }
+        .focus-ring:focus-within { border-color: #83cfff; box-shadow: none; outline: none; }
+        
+        .student-row-expanded .student-details { display: block; }
+        .student-row-expanded .expand-icon { transform: rotate(180deg); }
+        .student-details { display: none; }
+    </style>
+</head>
+<body class="antialiased min-h-screen flex flex-col font-body-md text-body-md">
+<!-- TopAppBar -->
+<header class="bg-surface/80 backdrop-blur-md fixed top-0 w-full z-50 border-b border-white/10 flex items-center justify-between px-margin-mobile h-touch-target">
+<div class="flex items-center gap-4">
+<button aria-label="Go back" class="hover:opacity-80 transition-opacity active:scale-95 transition-transform duration-200 text-primary flex items-center justify-center w-touch-target h-touch-target">
+<span class="material-symbols-outlined" data-icon="arrow_back">arrow_back</span>
+</button>
+<h1 class="font-headline-md text-headline-md font-bold text-primary tracking-tight">BNC Physics</h1>
+</div>
+<div class="flex items-center gap-2">
+<!-- Add search/filter icon if needed -->
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="flex-grow pt-[80px] pb-[80px] px-margin-mobile md:px-margin-desktop w-full max-w-[1200px] mx-auto flex flex-col gap-unit-md">
+<!-- Header & Search -->
+<div class="flex flex-col gap-unit-sm md:flex-row md:items-end md:justify-between">
+<div>
+<h2 class="font-headline-lg text-headline-lg text-on-surface">Admin - Students</h2>
+<p class="font-metadata-sm text-metadata-sm text-on-surface-variant">156 Students total</p>
+</div>
+<div class="bg-level-1 hairline-border focus-ring rounded flex items-center h-touch-target px-unit-sm w-full md:w-80 transition-colors">
+<span class="material-symbols-outlined text-on-surface-variant mr-2" data-icon="search">search</span>
+<input class="bg-transparent border-none outline-none text-on-surface font-body-md w-full placeholder:text-on-surface-variant focus:ring-0 p-0" placeholder="Search name, code, phone..." type="text"/>
+</div>
+</div>
+<!-- Student List (Denser UI) -->
+<div class="flex flex-col gap-unit-sm">
+<!-- Student Row 1 (Expanded) -->
+<div class="bg-level-2 edge-border rounded-lg overflow-hidden student-row-expanded">
+<!-- Collapsible Header -->
+<div class="flex items-center justify-between p-unit-md cursor-pointer hover:bg-white/[0.02] transition-colors" onclick="this.parentElement.classList.toggle('student-row-expanded')">
+<div class="flex-1 grid grid-cols-2 md:grid-cols-4 gap-4 items-center">
+<div>
+<p class="font-label-md text-label-md text-on-surface truncate">Aarav Menon</p>
+<p class="font-metadata-sm text-metadata-sm text-primary">STD-2024-001</p>
+</div>
+<div class="hidden md:block">
+<p class="font-body-md text-body-md text-on-surface-variant truncate">+91 98765 43210</p>
+</div>
+<div class="hidden md:block">
+<p class="font-body-md text-body-md text-on-surface-variant truncate">aarav.m@example.com</p>
+</div>
+<div class="text-right flex items-center justify-end gap-2">
+<span class="bg-surface-container-highest text-on-surface-variant font-metadata-sm text-metadata-sm px-2 py-1 rounded">3 Courses</span>
+</div>
+</div>
+<button class="ml-4 text-on-surface-variant w-8 h-8 flex items-center justify-center transition-transform expand-icon">
+<span class="material-symbols-outlined" data-icon="expand_more">expand_more</span>
+</button>
+</div>
+<!-- Expanded Details -->
+<div class="student-details bg-level-1 p-unit-md border-t hairline-border">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-unit-lg">
+<!-- Course Enrollments -->
+<div>
+<h4 class="font-label-md text-label-md text-on-surface-variant mb-unit-sm">Enrolled Courses</h4>
+<div class="flex flex-col gap-unit-xs">
+<label class="flex items-center gap-3 p-2 hover:bg-white/[0.02] rounded cursor-pointer">
+<input checked="" class="form-checkbox bg-transparent border-outline text-primary rounded w-5 h-5 focus:ring-primary focus:ring-offset-background" type="checkbox"/>
+<span class="font-body-md text-body-md">Class 12 Physics (State Board)</span>
+</label>
+<label class="flex items-center gap-3 p-2 hover:bg-white/[0.02] rounded cursor-pointer">
+<input checked="" class="form-checkbox bg-transparent border-outline text-primary rounded w-5 h-5 focus:ring-primary focus:ring-offset-background" type="checkbox"/>
+<span class="font-body-md text-body-md">NEET Crash Course 2024</span>
+</label>
+<label class="flex items-center gap-3 p-2 hover:bg-white/[0.02] rounded cursor-pointer opacity-60">
+<input class="form-checkbox bg-transparent border-outline text-primary rounded w-5 h-5 focus:ring-primary focus:ring-offset-background" type="checkbox"/>
+<span class="font-body-md text-body-md text-on-surface-variant line-through">Class 11 Mechanics</span>
+<span class="bg-tertiary/20 text-tertiary font-metadata-sm text-metadata-sm px-2 py-0.5 rounded ml-auto border border-tertiary/30">Hidden</span>
+</label>
+</div>
+</div>
+<!-- Device Management -->
+<div>
+<h4 class="font-label-md text-label-md text-on-surface-variant mb-unit-sm flex justify-between items-center">
+                                Device Security
+                                <span class="bg-surface-container-highest text-on-surface font-metadata-sm text-metadata-sm px-2 py-1 rounded">2/3 Devices Active</span>
+</h4>
+<div class="flex flex-col gap-unit-sm">
+<div class="bg-surface-container p-3 rounded edge-border flex justify-between items-center">
+<div>
+<p class="font-body-md text-body-md text-on-surface">Galaxy Tab S7</p>
+<p class="font-metadata-sm text-metadata-sm text-on-surface-variant">Last active: Today, 10:45 AM</p>
+</div>
+</div>
+<div class="bg-surface-container p-3 rounded edge-border flex justify-between items-center">
+<div>
+<p class="font-body-md text-body-md text-on-surface">Redmi Note 12</p>
+<p class="font-metadata-sm text-metadata-sm text-on-surface-variant">Last active: Yesterday</p>
+</div>
+</div>
+<button class="mt-2 h-touch-target w-full bg-transparent border border-error text-error hover:bg-error/10 font-label-md text-label-md rounded flex items-center justify-center transition-colors">
+<span class="material-symbols-outlined mr-2" data-icon="device_reset">device_reset</span>
+                                    Reset All Devices
+                                </button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Student Row 2 (Collapsed) -->
+<div class="bg-level-2 edge-border rounded-lg overflow-hidden">
+<div class="flex items-center justify-between p-unit-md cursor-pointer hover:bg-white/[0.02] transition-colors" onclick="this.parentElement.classList.toggle('student-row-expanded')">
+<div class="flex-1 grid grid-cols-2 md:grid-cols-4 gap-4 items-center">
+<div>
+<p class="font-label-md text-label-md text-on-surface truncate">Diya Sharma</p>
+<p class="font-metadata-sm text-metadata-sm text-primary">STD-2024-042</p>
+</div>
+<div class="hidden md:block">
+<p class="font-body-md text-body-md text-on-surface-variant truncate">+91 91234 56789</p>
+</div>
+<div class="hidden md:block">
+<p class="font-body-md text-body-md text-on-surface-variant truncate">diya.s@example.com</p>
+</div>
+<div class="text-right flex items-center justify-end gap-2">
+<span class="bg-surface-container-highest text-on-surface-variant font-metadata-sm text-metadata-sm px-2 py-1 rounded">1 Course</span>
+</div>
+</div>
+<button class="ml-4 text-on-surface-variant w-8 h-8 flex items-center justify-center transition-transform expand-icon">
+<span class="material-symbols-outlined" data-icon="expand_more">expand_more</span>
+</button>
+</div>
+<!-- Details omitted for brevity in collapsed state, would be same structure as above -->
+</div>
+<!-- Student Row 3 (Collapsed) -->
+<div class="bg-level-2 edge-border rounded-lg overflow-hidden">
+<div class="flex items-center justify-between p-unit-md cursor-pointer hover:bg-white/[0.02] transition-colors" onclick="this.parentElement.classList.toggle('student-row-expanded')">
+<div class="flex-1 grid grid-cols-2 md:grid-cols-4 gap-4 items-center">
+<div>
+<p class="font-label-md text-label-md text-on-surface truncate">Rohan Kumar</p>
+<p class="font-metadata-sm text-metadata-sm text-primary">STD-2024-088</p>
+</div>
+<div class="hidden md:block">
+<p class="font-body-md text-body-md text-on-surface-variant truncate">+91 99887 76655</p>
+</div>
+<div class="hidden md:block">
+<p class="font-body-md text-body-md text-on-surface-variant truncate">rohan.k@example.com</p>
+</div>
+<div class="text-right flex items-center justify-end gap-2">
+<span class="bg-surface-container-highest text-on-surface-variant font-metadata-sm text-metadata-sm px-2 py-1 rounded">2 Courses</span>
+</div>
+</div>
+<button class="ml-4 text-on-surface-variant w-8 h-8 flex items-center justify-center transition-transform expand-icon">
+<span class="material-symbols-outlined" data-icon="expand_more">expand_more</span>
+</button>
+</div>
+</div>
+</div>
+</main>
+<!-- BottomNavBar (Hidden on desktop, present on mobile as per rules) -->
+<!-- Assuming Profile is active based on Admin context loosely mapping to user/profile management if no better fit -->
+<nav class="bg-surface-container fixed bottom-0 w-full z-50 border-t border-white/10 md:hidden flex justify-around items-center h-[64px] px-unit-md">
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-colors active:scale-90 transition-transform duration-150 w-full h-full" href="#">
+<span class="material-symbols-outlined" data-icon="school">school</span>
+<span class="font-label-md text-label-md">Lessons</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-colors active:scale-90 transition-transform duration-150 w-full h-full" href="#">
+<span class="material-symbols-outlined" data-icon="functions">functions</span>
+<span class="font-label-md text-label-md">Formulas</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-colors active:scale-90 transition-transform duration-150 w-full h-full" href="#">
+<span class="material-symbols-outlined" data-icon="biotech">biotech</span>
+<span class="font-label-md text-label-md">Practice</span>
+</a>
+<a class="flex flex-col items-center justify-center bg-primary-container text-on-primary-container rounded-full px-4 py-1 hover:text-primary transition-colors active:scale-90 transition-transform duration-150" href="#">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+<span class="font-label-md text-label-md">Profile</span>
+</a>
+</nav>
+</body></html>

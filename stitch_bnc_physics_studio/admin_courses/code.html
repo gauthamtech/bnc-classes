@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Admin - Course Management</title>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700&amp;family=Schibsted+Grotesk:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Config from Guidance -->
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-primary": "#00344b",
+                    "surface-bright": "#343a3e",
+                    "on-tertiary-container": "#553000",
+                    "on-primary-container": "#003d57",
+                    "on-surface": "#dee3e9",
+                    "secondary-fixed-dim": "#77d1ff",
+                    "on-primary-fixed": "#001e2e",
+                    "outline-variant": "#3e4850",
+                    "primary-container": "#00adef",
+                    "on-tertiary-fixed": "#2c1600",
+                    "on-surface-variant": "#bdc8d1",
+                    "secondary": "#77d1ff",
+                    "outline": "#87929b",
+                    "on-primary-fixed-variant": "#004c6c",
+                    "surface-container-lowest": "#090f13",
+                    "tertiary": "#ffb86f",
+                    "inverse-on-surface": "#2c3135",
+                    "surface-container-low": "#171c20",
+                    "on-secondary-fixed": "#001e2c",
+                    "secondary-container": "#00a1d6",
+                    "inverse-surface": "#dee3e9",
+                    "tertiary-fixed-dim": "#ffb86f",
+                    "background": "#0f1418",
+                    "surface-variant": "#30353a",
+                    "on-tertiary-fixed-variant": "#693c00",
+                    "tertiary-container": "#e78d18",
+                    "on-error": "#690005",
+                    "surface-container": "#1b2024",
+                    "on-tertiary": "#4a2800",
+                    "surface-tint": "#83cfff",
+                    "primary-fixed": "#c6e7ff",
+                    "primary": "#83cfff",
+                    "surface-container-high": "#252b2f",
+                    "on-secondary": "#003549",
+                    "surface-dim": "#0f1418",
+                    "on-background": "#dee3e9",
+                    "surface-container-highest": "#30353a",
+                    "primary-fixed-dim": "#83cfff",
+                    "tertiary-fixed": "#ffdcbe",
+                    "on-secondary-fixed-variant": "#004d68",
+                    "inverse-primary": "#00658d",
+                    "error-container": "#93000a",
+                    "surface": "#0f1418",
+                    "secondary-fixed": "#c2e8ff",
+                    "on-error-container": "#ffdad6",
+                    "on-secondary-container": "#003346",
+                    "error": "#ffb4ab"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "unit-xl": "32px",
+                    "unit-xs": "4px",
+                    "gutter": "16px",
+                    "margin-mobile": "16px",
+                    "touch-target": "48px",
+                    "unit-sm": "8px",
+                    "unit-md": "16px",
+                    "margin-desktop": "32px",
+                    "unit-lg": "24px"
+            },
+            "fontFamily": {
+                    "body-md": [
+                            "Schibsted Grotesk"
+                    ],
+                    "headline-lg": [
+                            "Outfit"
+                    ],
+                    "display-lg": [
+                            "Outfit"
+                    ],
+                    "body-lg": [
+                            "Schibsted Grotesk"
+                    ],
+                    "metadata-sm": [
+                            "Schibsted Grotesk"
+                    ],
+                    "headline-md": [
+                            "Outfit"
+                    ],
+                    "label-md": [
+                            "Outfit"
+                    ]
+            },
+            "fontSize": {
+                    "body-md": [
+                            "16px",
+                            {
+                                    "lineHeight": "24px",
+                                    "letterSpacing": "0",
+                                    "fontWeight": "400"
+                            }
+                    ],
+                    "headline-lg": [
+                            "32px",
+                            {
+                                    "lineHeight": "40px",
+                                    "letterSpacing": "-0.01em",
+                                    "fontWeight": "600"
+                            }
+                    ],
+                    "display-lg": [
+                            "40px",
+                            {
+                                    "lineHeight": "48px",
+                                    "letterSpacing": "-0.02em",
+                                    "fontWeight": "700"
+                            }
+                    ],
+                    "body-lg": [
+                            "18px",
+                            {
+                                    "lineHeight": "28px",
+                                    "letterSpacing": "0",
+                                    "fontWeight": "400"
+                            }
+                    ],
+                    "metadata-sm": [
+                            "12px",
+                            {
+                                    "lineHeight": "16px",
+                                    "letterSpacing": "0",
+                                    "fontWeight": "400"
+                            }
+                    ],
+                    "headline-md": [
+                            "24px",
+                            {
+                                    "lineHeight": "32px",
+                                    "letterSpacing": "-0.01em",
+                                    "fontWeight": "600"
+                            }
+                    ],
+                    "label-md": [
+                            "14px",
+                            {
+                                    "lineHeight": "20px",
+                                    "letterSpacing": "0.02em",
+                                    "fontWeight": "600"
+                            }
+                    ]
+            }
+          }
+        }
+      }
+    </script>
+<style>
+        /* Custom scrollbar for dense UI */
+        ::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: theme('colors.surface-container-lowest'); 
+        }
+        ::-webkit-scrollbar-thumb {
+            background: theme('colors.outline-variant'); 
+            border-radius: theme('borderRadius.full');
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: theme('colors.outline'); 
+        }
+        
+        /* Utility for Hairline borders from guidance */
+        .border-hairline {
+            border-color: rgba(255, 255, 255, 0.14);
+        }
+        .border-t-hairline {
+            border-top-color: rgba(255, 255, 255, 0.14);
+        }
+        .border-b-hairline {
+            border-bottom-color: rgba(255, 255, 255, 0.14);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface antialiased min-h-screen flex flex-col font-body-md text-body-md">
+<!-- TopAppBar (from Shared Components) -->
+<header class="bg-surface/80 backdrop-blur-md fixed top-0 w-full z-50 border-b border-white/10 flex items-center justify-between px-margin-mobile h-touch-target">
+<div class="flex items-center gap-unit-md">
+<button class="flex items-center justify-center w-touch-target h-touch-target hover:opacity-80 transition-opacity active:scale-95 text-on-surface-variant">
+<span class="material-symbols-outlined">arrow_back</span>
+</button>
+<h1 class="font-headline-md text-headline-md font-bold text-primary tracking-tight">BNC Physics Admin</h1>
+</div>
+<!-- Desktop Nav (Extrapolated from mobile bottom nav to hide on mobile) -->
+<nav class="hidden md:flex items-center gap-unit-md h-full">
+<a class="flex items-center h-full px-unit-sm border-b-2 border-primary text-primary font-label-md text-label-md hover:opacity-80 transition-opacity" href="#">
+<span class="material-symbols-outlined mr-unit-xs" style="font-variation-settings: 'FILL' 1;">school</span>
+                Lessons
+            </a>
+<a class="flex items-center h-full px-unit-sm border-b-2 border-transparent text-on-surface-variant font-label-md text-label-md hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined mr-unit-xs">functions</span>
+                Formulas
+            </a>
+<a class="flex items-center h-full px-unit-sm border-b-2 border-transparent text-on-surface-variant font-label-md text-label-md hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined mr-unit-xs">biotech</span>
+                Practice
+            </a>
+<a class="flex items-center h-full px-unit-sm border-b-2 border-transparent text-on-surface-variant font-label-md text-label-md hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined mr-unit-xs">person</span>
+                Profile
+            </a>
+</nav>
+</header>
+<!-- Main Content Canvas -->
+<main class="flex-grow pt-[72px] pb-[80px] md:pb-unit-xl px-margin-mobile md:px-margin-desktop max-w-[1200px] w-full mx-auto">
+<!-- Page Header & Add New Course Control -->
+<div class="mb-unit-lg">
+<h2 class="font-headline-lg text-headline-lg text-on-surface mb-unit-md">Course Structure</h2>
+<div class="bg-surface-container-low border border-hairline rounded-lg p-unit-md">
+<div class="flex flex-col md:flex-row gap-unit-sm items-start md:items-end">
+<div class="w-full md:w-1/4">
+<label class="block font-label-md text-label-md text-on-surface-variant mb-unit-xs">Grade Level</label>
+<div class="relative">
+<select class="w-full h-touch-target bg-surface-container-lowest border border-outline-variant text-on-surface font-body-md text-body-md rounded focus:border-primary focus:ring-1 focus:ring-primary appearance-none px-unit-md">
+<option>Grade 11</option>
+<option>Grade 12</option>
+</select>
+<span class="material-symbols-outlined absolute right-unit-sm top-1/2 -translate-y-1/2 text-on-surface-variant pointer-events-none">expand_more</span>
+</div>
+</div>
+<div class="w-full md:w-1/2">
+<label class="block font-label-md text-label-md text-on-surface-variant mb-unit-xs">Course Title</label>
+<input class="w-full h-touch-target bg-surface-container-lowest border border-outline-variant text-on-surface font-body-md text-body-md rounded focus:border-primary focus:ring-1 focus:ring-primary px-unit-md placeholder:text-outline" placeholder="e.g., Kinematics Advanced" type="text"/>
+</div>
+<div class="w-full md:w-auto mt-unit-sm md:mt-0">
+<button class="w-full md:w-auto h-touch-target px-unit-lg bg-primary text-on-primary font-label-md text-label-md rounded flex items-center justify-center gap-unit-xs hover:bg-surface-tint transition-colors active:scale-95">
+<span class="material-symbols-outlined text-[20px]">add</span>
+                            Create Course
+                        </button>
+</div>
+</div>
+</div>
+</div>
+<!-- Course List Grid -->
+<div class="flex flex-col gap-unit-md">
+<!-- Collapsed Row Example -->
+<div class="bg-surface-container border border-hairline rounded-lg overflow-hidden transition-all duration-200 hover:bg-surface-container-high cursor-pointer">
+<div class="flex items-center min-h-[56px] px-unit-md gap-unit-md">
+<button class="text-on-surface-variant p-2 rounded-full hover:bg-white/5 active:scale-90 transition-transform">
+<span class="material-symbols-outlined">chevron_right</span>
+</button>
+<div class="flex-shrink-0 w-20">
+<span class="font-metadata-sm text-metadata-sm text-primary uppercase tracking-wider">Grade 11</span>
+</div>
+<div class="flex-grow">
+<span class="font-headline-md text-headline-md text-on-surface text-[18px]">Mechanics Foundation</span>
+</div>
+<div class="flex items-center gap-unit-sm hidden md:flex">
+<div class="bg-surface-container-highest px-3 py-1 rounded-full border border-hairline flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-on-surface-variant">video_library</span>
+<span class="font-metadata-sm text-metadata-sm text-on-surface-variant">12 Videos</span>
+</div>
+<div class="bg-surface-container-highest px-3 py-1 rounded-full border border-hairline flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-on-surface-variant">folder</span>
+<span class="font-metadata-sm text-metadata-sm text-on-surface-variant">3 Groups</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Expanded Row Example -->
+<div class="bg-surface-container border border-hairline rounded-lg overflow-hidden">
+<!-- Row Header (Active) -->
+<div class="flex items-center min-h-[56px] px-unit-md gap-unit-md bg-surface-container-high border-b border-hairline">
+<button class="text-primary p-2 rounded-full hover:bg-white/5 active:scale-90 transition-transform">
+<span class="material-symbols-outlined" style="transform: rotate(90deg);">chevron_right</span>
+</button>
+<div class="flex-shrink-0 w-20">
+<span class="font-metadata-sm text-metadata-sm text-primary uppercase tracking-wider">Grade 12</span>
+</div>
+<div class="flex-grow">
+<span class="font-headline-md text-headline-md text-on-surface text-[18px]">Electromagnetism</span>
+</div>
+</div>
+<!-- Expanded Content Area -->
+<div class="p-unit-sm md:p-unit-md bg-surface-container-lowest/50 pl-[52px]">
+<!-- Lesson Group 1 -->
+<div class="mb-unit-lg">
+<div class="flex items-center justify-between border-b border-hairline pb-unit-sm mb-unit-sm">
+<h4 class="font-label-md text-label-md text-on-surface uppercase tracking-widest flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px] text-on-surface-variant">drag_indicator</span>
+                                Electrostatics
+                            </h4>
+<div class="flex items-center gap-2">
+<input class="h-[36px] bg-surface-container-low border border-outline-variant text-on-surface font-body-md text-body-md text-[14px] rounded px-3 focus:border-primary focus:ring-1 focus:ring-primary w-[200px] hidden md:block" placeholder="Add new lesson title..." type="text"/>
+<button class="h-[36px] px-3 bg-surface-container-high border border-outline-variant text-on-surface font-label-md text-label-md rounded flex items-center gap-1 hover:bg-white/5 transition-colors">
+<span class="material-symbols-outlined text-[18px]">add</span>
+                                    Lesson
+                                </button>
+</div>
+</div>
+<!-- Lesson Item (Visible) -->
+<div class="flex flex-col md:flex-row md:items-center justify-between bg-surface-container border border-hairline rounded p-2 mb-2 group hover:border-outline-variant transition-colors">
+<div class="flex items-center gap-3 mb-2 md:mb-0">
+<span class="material-symbols-outlined text-outline cursor-move hover:text-on-surface transition-colors">drag_indicator</span>
+<div class="bg-primary/10 text-primary px-2 py-0.5 rounded text-metadata-sm font-metadata-sm border border-primary/20">Visible</div>
+<span class="font-body-md text-body-md text-on-surface line-clamp-1">Coulomb's Law &amp; Electric Fields</span>
+</div>
+<div class="flex items-center gap-2 pl-9 md:pl-0">
+<span class="font-metadata-sm text-metadata-sm text-on-surface-variant mr-4 hidden md:inline-block">14:20</span>
+<button class="h-[32px] px-3 border border-outline-variant text-on-surface-variant font-label-md text-label-md rounded flex items-center gap-1 hover:bg-white/5 hover:text-on-surface transition-colors text-[12px]">
+<span class="material-symbols-outlined text-[16px]">visibility_off</span>
+                                    Hide
+                                </button>
+<button class="h-[32px] px-3 border border-error/50 text-error font-label-md text-label-md rounded flex items-center gap-1 hover:bg-error/10 hover:border-error transition-colors text-[12px]">
+<span class="material-symbols-outlined text-[16px]">delete</span>
+</button>
+</div>
+</div>
+<!-- Lesson Item (Hidden) -->
+<div class="flex flex-col md:flex-row md:items-center justify-between bg-surface-container/50 border border-hairline border-dashed rounded p-2 mb-2 group">
+<div class="flex items-center gap-3 mb-2 md:mb-0 opacity-60">
+<span class="material-symbols-outlined text-outline cursor-move">drag_indicator</span>
+<div class="bg-surface-variant text-on-surface-variant px-2 py-0.5 rounded text-metadata-sm font-metadata-sm border border-outline-variant">Hidden</div>
+<span class="font-body-md text-body-md text-on-surface-variant line-clamp-1">Gauss's Law Applications (Draft)</span>
+</div>
+<div class="flex items-center gap-2 pl-9 md:pl-0">
+<button class="h-[32px] px-3 border border-primary/50 text-primary font-label-md text-label-md rounded flex items-center gap-1 hover:bg-primary/10 hover:border-primary transition-colors text-[12px]">
+<span class="material-symbols-outlined text-[16px]">visibility</span>
+                                    Show
+                                </button>
+<button class="h-[32px] px-3 border border-error/50 text-error font-label-md text-label-md rounded flex items-center gap-1 hover:bg-error/10 hover:border-error transition-colors text-[12px]">
+<span class="material-symbols-outlined text-[16px]">delete</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Add New Group / Upload Area -->
+<div class="mt-unit-md p-unit-md border-2 border-dashed border-outline-variant rounded-lg bg-surface-container-low flex flex-col items-center justify-center text-center relative overflow-hidden group">
+<!-- Upload State Mockup -->
+<div class="w-full max-w-md">
+<div class="flex justify-between items-end mb-2">
+<span class="font-label-md text-label-md text-on-surface">Uploading: Magnetic_Flux_Intro.mp4</span>
+<span class="font-metadata-sm text-metadata-sm text-primary">68%</span>
+</div>
+<!-- Progress Bar -->
+<div class="w-full h-2 bg-surface-container-highest rounded-full overflow-hidden">
+<div class="h-full bg-primary w-[68%] transition-all duration-300"></div>
+</div>
+<button class="mt-4 h-[36px] px-4 border border-outline-variant text-on-surface-variant font-label-md text-label-md rounded hover:bg-white/5 transition-colors text-[13px]">
+                                Cancel Upload
+                            </button>
+</div>
+</div>
+</div>
+</div>
+<!-- Another Collapsed Row -->
+<div class="bg-surface-container border border-hairline rounded-lg overflow-hidden transition-all duration-200 hover:bg-surface-container-high cursor-pointer opacity-70">
+<div class="flex items-center min-h-[56px] px-unit-md gap-unit-md">
+<button class="text-on-surface-variant p-2 rounded-full hover:bg-white/5 active:scale-90 transition-transform">
+<span class="material-symbols-outlined">chevron_right</span>
+</button>
+<div class="flex-shrink-0 w-20">
+<span class="font-metadata-sm text-metadata-sm text-primary uppercase tracking-wider">Grade 12</span>
+</div>
+<div class="flex-grow">
+<span class="font-headline-md text-headline-md text-on-surface text-[18px]">Optics</span>
+</div>
+<div class="flex items-center gap-unit-sm hidden md:flex">
+<span class="font-metadata-sm text-metadata-sm text-on-surface-variant italic">Empty Course</span>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- BottomNavBar (from Shared Components - Mobile Only) -->
+<nav class="md:hidden bg-surface-container border-t border-white/10 fixed bottom-0 w-full z-50 flex justify-around items-center h-[64px] px-unit-md pb-[env(safe-area-inset-bottom)]">
+<a class="flex flex-col items-center justify-center bg-primary-container text-on-primary-container rounded-full px-4 py-1 active:scale-90 transition-transform duration-150" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">school</span>
+<span class="font-label-md text-label-md text-[12px] mt-1">Lessons</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-colors active:scale-90 transition-transform duration-150" href="#">
+<span class="material-symbols-outlined">functions</span>
+<span class="font-label-md text-label-md text-[12px] mt-1">Formulas</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-colors active:scale-90 transition-transform duration-150" href="#">
+<span class="material-symbols-outlined">biotech</span>
+<span class="font-label-md text-label-md text-[12px] mt-1">Practice</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-colors active:scale-90 transition-transform duration-150" href="#">
+<span class="material-symbols-outlined">person</span>
+<span class="font-label-md text-label-md text-[12px] mt-1">Profile</span>
+</a>
+</nav>
+</body></html>

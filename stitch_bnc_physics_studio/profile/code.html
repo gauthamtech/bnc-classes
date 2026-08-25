@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Profile</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-primary": "#00344b",
+                    "surface-bright": "#343a3e",
+                    "on-tertiary-container": "#553000",
+                    "on-primary-container": "#003d57",
+                    "on-surface": "#dee3e9",
+                    "secondary-fixed-dim": "#77d1ff",
+                    "on-primary-fixed": "#001e2e",
+                    "outline-variant": "#3e4850",
+                    "primary-container": "#00adef",
+                    "on-tertiary-fixed": "#2c1600",
+                    "on-surface-variant": "#bdc8d1",
+                    "secondary": "#77d1ff",
+                    "outline": "#87929b",
+                    "on-primary-fixed-variant": "#004c6c",
+                    "surface-container-lowest": "#090f13",
+                    "tertiary": "#ffb86f",
+                    "inverse-on-surface": "#2c3135",
+                    "surface-container-low": "#171c20",
+                    "on-secondary-fixed": "#001e2c",
+                    "secondary-container": "#00a1d6",
+                    "inverse-surface": "#dee3e9",
+                    "tertiary-fixed-dim": "#ffb86f",
+                    "background": "#0f1418",
+                    "surface-variant": "#30353a",
+                    "on-tertiary-fixed-variant": "#693c00",
+                    "tertiary-container": "#e78d18",
+                    "on-error": "#690005",
+                    "surface-container": "#1b2024",
+                    "on-tertiary": "#4a2800",
+                    "surface-tint": "#83cfff",
+                    "primary-fixed": "#c6e7ff",
+                    "primary": "#83cfff",
+                    "surface-container-high": "#252b2f",
+                    "on-secondary": "#003549",
+                    "surface-dim": "#0f1418",
+                    "on-background": "#dee3e9",
+                    "surface-container-highest": "#30353a",
+                    "primary-fixed-dim": "#83cfff",
+                    "tertiary-fixed": "#ffdcbe",
+                    "on-secondary-fixed-variant": "#004d68",
+                    "inverse-primary": "#00658d",
+                    "error-container": "#93000a",
+                    "surface": "#0f1418",
+                    "secondary-fixed": "#c2e8ff",
+                    "on-error-container": "#ffdad6",
+                    "on-secondary-container": "#003346",
+                    "error": "#ffb4ab"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "unit-xl": "32px",
+                    "unit-xs": "4px",
+                    "gutter": "16px",
+                    "margin-mobile": "16px",
+                    "touch-target": "48px",
+                    "unit-sm": "8px",
+                    "unit-md": "16px",
+                    "margin-desktop": "32px",
+                    "unit-lg": "24px"
+            },
+            "fontFamily": {
+                    "body-md": [
+                            "Schibsted Grotesk"
+                    ],
+                    "headline-lg": [
+                            "Outfit"
+                    ],
+                    "display-lg": [
+                            "Outfit"
+                    ],
+                    "body-lg": [
+                            "Schibsted Grotesk"
+                    ],
+                    "metadata-sm": [
+                            "Schibsted Grotesk"
+                    ],
+                    "headline-md": [
+                            "Outfit"
+                    ],
+                    "label-md": [
+                            "Outfit"
+                    ]
+            },
+            "fontSize": {
+                    "body-md": [
+                            "16px",
+                            {
+                                    "lineHeight": "24px",
+                                    "letterSpacing": "0",
+                                    "fontWeight": "400"
+                            }
+                    ],
+                    "headline-lg": [
+                            "32px",
+                            {
+                                    "lineHeight": "40px",
+                                    "letterSpacing": "-0.01em",
+                                    "fontWeight": "600"
+                            }
+                    ],
+                    "display-lg": [
+                            "40px",
+                            {
+                                    "lineHeight": "48px",
+                                    "letterSpacing": "-0.02em",
+                                    "fontWeight": "700"
+                            }
+                    ],
+                    "body-lg": [
+                            "18px",
+                            {
+                                    "lineHeight": "28px",
+                                    "letterSpacing": "0",
+                                    "fontWeight": "400"
+                            }
+                    ],
+                    "metadata-sm": [
+                            "12px",
+                            {
+                                    "lineHeight": "16px",
+                                    "letterSpacing": "0",
+                                    "fontWeight": "400"
+                            }
+                    ],
+                    "headline-md": [
+                            "24px",
+                            {
+                                    "lineHeight": "32px",
+                                    "letterSpacing": "-0.01em",
+                                    "fontWeight": "600"
+                            }
+                    ],
+                    "label-md": [
+                            "14px",
+                            {
+                                    "lineHeight": "20px",
+                                    "letterSpacing": "0.02em",
+                                    "fontWeight": "600"
+                            }
+                    ]
+            }
+    },
+        },
+      }
+    </script>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400..700&amp;family=Schibsted+Grotesk:wght@400..700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        /* Style Guide Exceptions & Enforcements */
+        body { background-color: #060814; }
+        .bg-recessed-night { background-color: #090C1D; }
+        .bg-panel-navy { background-color: #0D1128; }
+        .bg-raised-navy { background-color: #131836; }
+        .border-edge { border-color: rgba(255,255,255,0.14); }
+        .border-hairline { border-color: rgba(255,255,255,0.075); }
+    </style>
+</head>
+<body class="text-on-background min-h-screen flex flex-col font-body-md text-body-md pt-20 pb-24">
+<!-- TopAppBar -->
+<header class="bg-surface/80 backdrop-blur-md fixed top-0 w-full z-50 border-b border-white/10 flat no shadows flex items-center justify-between px-margin-mobile h-touch-target">
+<div class="flex items-center gap-2">
+<button aria-label="Go back" class="text-primary hover:opacity-80 transition-opacity active:scale-95 transition-transform duration-200 p-2 -ml-2">
+<span class="material-symbols-outlined" data-icon="arrow_back">arrow_back</span>
+</button>
+<h1 class="font-headline-md text-headline-md font-bold text-primary">BNC Physics</h1>
+</div>
+</header>
+<main class="flex-grow flex flex-col px-margin-mobile md:px-margin-desktop md:max-w-[1200px] md:mx-auto w-full gap-unit-lg">
+<!-- Header Section -->
+<section class="flex flex-col gap-unit-xs pt-unit-md">
+<h2 class="font-display-lg text-display-lg text-on-background">Profile</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant">Manage your account details</p>
+</section>
+<!-- Read-Only Info Card -->
+<section class="bg-panel-navy border border-edge rounded-lg p-[20px] flex flex-col gap-unit-md">
+<div class="flex flex-col gap-unit-xs">
+<span class="font-metadata-sm text-metadata-sm text-on-surface-variant uppercase tracking-wider">Student Code</span>
+<span class="font-headline-md text-headline-md text-primary font-mono tracking-widest">BNC-982-X</span>
+</div>
+<hr class="border-t border-hairline w-full"/>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-unit-md">
+<div class="flex flex-col gap-unit-xs">
+<span class="font-metadata-sm text-metadata-sm text-on-surface-variant uppercase tracking-wider">Email</span>
+<span class="font-body-lg text-body-lg text-on-surface">student.kerala@bnc.edu</span>
+</div>
+<div class="flex flex-col gap-unit-xs">
+<span class="font-metadata-sm text-metadata-sm text-on-surface-variant uppercase tracking-wider">Joined Date</span>
+<span class="font-body-lg text-body-lg text-on-surface">14 Aug 2023</span>
+</div>
+</div>
+</section>
+<!-- Editable Form Section -->
+<section class="bg-panel-navy border border-edge rounded-lg p-[20px] flex flex-col gap-unit-md">
+<form class="flex flex-col gap-unit-lg">
+<div class="flex flex-col gap-unit-xs">
+<label class="font-label-md text-label-md text-on-surface" for="fullName">Full Name</label>
+<input class="bg-recessed-night border border-hairline text-on-background font-body-lg text-body-lg rounded h-touch-target px-unit-md focus:outline-none focus:border-primary focus:ring-0 transition-colors" id="fullName" type="text" value="Arjun Menon"/>
+</div>
+<div class="flex flex-col gap-unit-xs">
+<label class="font-label-md text-label-md text-on-surface" for="phone">Phone Number</label>
+<input class="bg-recessed-night border border-hairline text-on-background font-body-lg text-body-lg rounded h-touch-target px-unit-md focus:outline-none focus:border-primary focus:ring-0 transition-colors" id="phone" type="tel" value="+91 98765 43210"/>
+</div>
+<!-- Actions -->
+<div class="flex flex-col md:flex-row gap-unit-md pt-unit-sm">
+<button class="bg-primary text-on-primary font-label-md text-label-md rounded h-touch-target px-unit-lg flex-1 md:flex-none flex items-center justify-center hover:bg-primary-fixed transition-colors active:scale-95 duration-200" type="submit">
+                        Save Changes
+                    </button>
+<button class="bg-transparent border border-edge text-primary font-label-md text-label-md rounded h-touch-target px-unit-lg flex-1 md:flex-none flex items-center justify-center hover:bg-white/5 transition-colors active:scale-95 duration-200" type="button">
+                        Sign out
+                    </button>
+</div>
+</form>
+</section>
+</main>
+<!-- BottomNavBar (Mobile Only) -->
+<nav class="md:hidden bg-surface-container fixed bottom-0 w-full z-50 border-t border-white/10 flat no shadows flex justify-around items-center h-[64px] px-unit-md">
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-colors active:scale-90 transition-transform duration-150" href="#">
+<span class="material-symbols-outlined" data-icon="school">school</span>
+<span class="font-label-md text-label-md mt-1">Lessons</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-colors active:scale-90 transition-transform duration-150" href="#">
+<span class="material-symbols-outlined" data-icon="functions">functions</span>
+<span class="font-label-md text-label-md mt-1">Formulas</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-colors active:scale-90 transition-transform duration-150" href="#">
+<span class="material-symbols-outlined" data-icon="biotech">biotech</span>
+<span class="font-label-md text-label-md mt-1">Practice</span>
+</a>
+<a class="flex flex-col items-center justify-center bg-primary-container text-on-primary-container rounded-full px-4 py-1 active:scale-90 transition-transform duration-150" href="#">
+<span class="material-symbols-outlined" data-icon="person" style="font-variation-settings: 'FILL' 1;">person</span>
+<span class="font-label-md text-label-md mt-1">Profile</span>
+</a>
+</nav>
+<!-- SideNav (Desktop Only - Logical Extension of Bottom Nav) -->
+<nav class="hidden md:flex flex-col bg-surface-container fixed left-0 top-[48px] h-[calc(100vh-48px)] w-[240px] z-40 border-r border-white/10 p-unit-md gap-unit-md">
+<a class="flex items-center gap-unit-md text-on-surface-variant hover:text-primary transition-colors p-unit-sm rounded h-touch-target" href="#">
+<span class="material-symbols-outlined" data-icon="school">school</span>
+<span class="font-label-md text-label-md">Lessons</span>
+</a>
+<a class="flex items-center gap-unit-md text-on-surface-variant hover:text-primary transition-colors p-unit-sm rounded h-touch-target" href="#">
+<span class="material-symbols-outlined" data-icon="functions">functions</span>
+<span class="font-label-md text-label-md">Formulas</span>
+</a>
+<a class="flex items-center gap-unit-md text-on-surface-variant hover:text-primary transition-colors p-unit-sm rounded h-touch-target" href="#">
+<span class="material-symbols-outlined" data-icon="biotech">biotech</span>
+<span class="font-label-md text-label-md">Practice</span>
+</a>
+<a class="flex items-center gap-unit-md bg-primary-container text-on-primary-container p-unit-sm rounded h-touch-target" href="#">
+<span class="material-symbols-outlined" data-icon="person" style="font-variation-settings: 'FILL' 1;">person</span>
+<span class="font-label-md text-label-md">Profile</span>
+</a>
+</nav>
+<!-- Adjust main padding for desktop sidebar -->
+<style>
+        @media (min-width: 768px) {
+            main { padding-left: calc(240px + 32px); }
+        }
+    </style>
+</body></html>

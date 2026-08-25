@@ -1,0 +1,12 @@
+{
+  "projects": {
+    "default": "bnc-classes"
+  },
+  "targets": {
+    "bnc-classes": {
+      "hosting": {
+        "app": ["bnc-app"]
+      }
+    }
+  }
+}

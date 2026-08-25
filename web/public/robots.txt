@@ -1,0 +1,5 @@
+# Private student app: a login screen and paid lessons have no business
+# in search results. The website's robots.txt used to cover this when the
+# app lived at /app/; on its own site it needs its own rule.
+User-agent: *
+Disallow: /

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Mirrors the web build's tokens in styles.css. Keep the two in step: a
+     mismatch shows as a coloured flash between the splash and the page. -->
+<resources>
+    <color name="ground">#060814</color>
+    <color name="surface">#0D1128</color>
+    <color name="cyan">#00ADEF</color>
+    <color name="on_cyan">#041224</color>
+    <color name="text">#F1F4FF</color>
+    <color name="text_dim">#A2ACCB</color>
+</resources>

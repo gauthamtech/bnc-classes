@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">BNC Classes</string>
+
+    <string name="offline_title">No connection</string>
+    <string name="offline_body">Check your internet and try again. Your progress is saved.</string>
+    <string name="offline_retry">Try again</string>
+
+    <string name="root_title">Modified device</string>
+    <!-- Tone matters. The student is told what was found and what it means,
+         not accused of piracy. Most people with a rooted phone bought it that
+         way or forgot it was done years ago. -->
+    <string name="root_body">This phone appears to be rooted. Lessons will still play, but BNC cannot guarantee that video protection works correctly on a modified device.</string>
+    <string name="root_ok">Continue</string>
+</resources>
